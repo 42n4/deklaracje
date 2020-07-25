@@ -8,7 +8,7 @@
 # Zlepił w całość i pokolorował :) gunter
 # Nie wszystkie funkcje sprawdzające, czy folder/plik istnieje, są dodane. Bo i po co.
 # UWAGA: Skrypt dodaje repozytoria universe dla Ubuntu 18.04 i nowszych.
-# zmiany dla 20.04 - P.Wasiewicz
+# zmiany tylko dla 20.04 - P.Wasiewicz
 ##tymczasowy
 mkdir /tmp/tmpdek
 cd /tmp/tmpdek
