@@ -8,6 +8,7 @@
 # Zlepił w całość i pokolorował :) gunter
 # Nie wszystkie funkcje sprawdzające, czy folder/plik istnieje, są dodane. Bo i po co.
 # UWAGA: Skrypt dodaje repozytoria universe dla Ubuntu 18.04 i nowszych.
+# zmiany dla 20.04 - P.Wasiewicz
 ##tymczasowy
 mkdir /tmp/tmpdek
 cd /tmp/tmpdek
@@ -38,13 +39,18 @@ if [ `uname -n` == ubuntu ]; then (ubu_univers); fi
 
 ##install packages
 inst(){
-$sprawdz "dpkg --add-architecture i386; apt-get update"
-
-for i in libgtk2.0-0:i386 libstdc++6:i386 libxml2:i386 libxslt1.1:i386 libcanberra-gtk-module:i386\
-		gtk2-engines-murrine:i386 libqt4-qt3support:i386 libgnome-keyring0:i386 libnss-mdns:i386\
-		libnss3:i386 wget unzip bzip2; do
-$sprawdz "apt-get install -y $i"
-done
+add-apt-repository universe
+#$sprawdz "dpkg --add-architecture i386; apt-get update"
+apt install -y git mc vim sg3-utils libatk-adaptor:i386\
+libgail-common:i386 gnome-themes-standard gnome-themes-extra gnome-themes-extra:i386 gnome-icon-theme\
+libxml2:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386 libatk-adaptor:i386\
+libgtk2.0-0:i386 libstdc++6:i386 libxml2:i386 libxslt1.1:i386 libcanberra-gtk-module:i386 gtk2-engines-murrine:i386\
+libqt4-qt3support:i386 libgnome-keyring0:i386 libnss-mdns:i386 libnss3:i386 libcanberra-gtk-module libcanberra-gtk3-module
+#for i in libgtk2.0-0:i386 libstdc++6:i386 libxml2:i386 libxslt1.1:i386 libcanberra-gtk-module:i386\
+#		gtk2-engines-murrine:i386 libqt4-qt3support:i386 libgnome-keyring0:i386 libnss-mdns:i386\
+#		libnss3:i386 wget unzip bzip2; do
+#$sprawdz "apt-get install -y $i"
+#done
 }
 
 ##depends_p
